@@ -6,7 +6,7 @@
 package figurasgeometricas;
 
 /**
- *
+ * Representa una esfera en el plano
  * @author Pablo
  */
 public class Esfera extends Figuras3D{
@@ -17,11 +17,19 @@ public class Esfera extends Figuras3D{
         this.radio = radio;
     }
     
+    /**
+     * 
+     * @return la superficie de la esfera
+     */
     @Override
     public double CalcularSuperficie () {
         return 4 * Math.PI * Math.pow(getRadio(),2);
     }
     
+    /**
+     * 
+     * @return el volumen de la esfera
+     */
     @Override
     public double CalcularVolumen () {
         return (4/3)* Math.PI * Math.pow(getRadio(),3);
@@ -29,14 +37,14 @@ public class Esfera extends Figuras3D{
     
     
     /**
-     * @return the radio
+     * @return el radio de la esfera
      */
     public double getRadio() {
         return radio;
     }
 
     /**
-     * @param radio the radio to set
+     * @param radio Establece el radio de la esfera
      */
     public void setRadio(double radio) {
         this.radio = radio;

@@ -6,20 +6,25 @@
 package figurasgeometricas;
 
 /**
- *
+ * Representa un triángulo en el plano
  * @author Pablo
  */
-public class Triangulos extends Figuras2D {
+public abstract class Triangulos extends Figuras2D {
     private double lado1;
     private double lado2;
     private double lado3;
     
-    public Triangulos (double lado1, double lado2, double lado3){ //constructor
+    public Triangulos (Posicion2D posicion, double lado1, double lado2, double lado3){ //constructor
+        super (posicion, "Triangulo");
         this.lado1 = lado1;
         this.lado2 = lado2;
         this.lado3 = lado3;
     }
     
+    /**
+     * 
+     * @return la superficie
+     */
         @Override
     public double CalcularSuperficie () { 
         double s = CalcularPerimetro() / 2; //semiperimetro//
@@ -28,34 +33,38 @@ public class Triangulos extends Figuras2D {
         return Math.sqrt(s * (s - lado1) * (s - lado2) * (s - lado3));
     }
     
+    /**
+     * 
+     * @return el perímetro
+     */
     @Override
     public double CalcularPerimetro () {
         return lado1 + lado2 + lado3;
     }
     
     /**
-     * @return the lado1
+     * @return el lado1
      */
     public double getLado1() {
         return lado1;
     }
 
     /**
-     * @return the lado2
+     * @return el lado2
      */
     public double getLado2() {
         return lado2;
     }
 
     /**
-     * @return the lado3
+     * @return el lado3
      */
     public double getLado3() {
         return lado3;
     }
 
     /**
-     * @param lado1 the lado1 to set
+     * @param lado1 Establece el lado1
      * @throws figurasgeometricas.DimensionIncorrectaException
      */
     public void setLado1(double lado1) throws DimensionIncorrectaException{
@@ -66,7 +75,7 @@ public class Triangulos extends Figuras2D {
     }
 
     /**
-     * @param lado2 the lado2 to set
+     * @param lado2 Establece el lado2
      * @throws figurasgeometricas.DimensionIncorrectaException
      */
     public void setLado2(double lado2) throws DimensionIncorrectaException{
@@ -77,7 +86,7 @@ public class Triangulos extends Figuras2D {
     }
 
     /**
-     * @param lado3 the lado3 to set
+     * @param lado3 Establece el lado3
      */
     public void setLado3(double lado3) throws DimensionIncorrectaException {
         if (lado3 <= 0){

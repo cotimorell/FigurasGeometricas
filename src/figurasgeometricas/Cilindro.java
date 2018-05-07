@@ -6,7 +6,7 @@
 package figurasgeometricas;
 
 /**
- *
+ * Representa un cilindro en el plano
  * @author Pablo
  */
 public class Cilindro extends Figuras3D{
@@ -18,11 +18,19 @@ public class Cilindro extends Figuras3D{
         this.largo = largo;
     }
     
+    /**
+     * 
+     * @return la superficie
+     */
     @Override
     public double CalcularSuperficie () {
         return 2 * Math.PI * getRadio() * (getRadio() + getLargo());
     }
     
+    /**
+     * 
+     * @return el volumen
+     */
     @Override
     public double CalcularVolumen () {
         return getLargo() * Math.PI * Math.pow(getRadio(),2);
@@ -36,7 +44,7 @@ public class Cilindro extends Figuras3D{
     }
 
     /**
-     * @param radio the radio to set
+     * @param radio Establece el radio
      */
     public void setRadio(double radio) {
         this.radio = radio;
@@ -50,7 +58,7 @@ public class Cilindro extends Figuras3D{
     }
 
     /**
-     * @param largo the largo to set
+     * @param largo Establece el largo
      */
     public void setLargo(double largo) {
         this.largo = largo;

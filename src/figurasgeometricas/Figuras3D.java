@@ -11,6 +11,10 @@ package figurasgeometricas;
  */
 public abstract class Figuras3D extends FigurasGeometricas {
 
+    /**
+     * 
+     * @return el volumen de la figura
+     */
     abstract public double CalcularVolumen ();
        
 }
